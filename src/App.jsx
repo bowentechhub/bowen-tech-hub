@@ -1,18 +1,18 @@
 import { Suspense, lazy } from "react";
 import logo from "./assets/logos/logo.svg";
-import SectionFive from "./sections/SectionFive";
 
-const Navbar = lazy(() => import("./sections/Navbar"));
-const Partners = lazy(() => import("./sections/Partners"));
-const SectionThree = lazy(() => import("./sections/SectionThree"));
+const Navbar = lazy(() => import("./components/Navbar"));
+const Partners = lazy(() => import("./components/Partners"));
+const SectionThree = lazy(() => import("./components/SectionThree"));
 const Modal = lazy(() => import("./modals/Modal"));
-const Communities = lazy(() => import("./sections/Communities"));
-const Hero = lazy(() => import("./sections/Hero"));
-const SectionFour = lazy(() => import("./sections/SectionFour"));
-const SectionSeven = lazy(() => import("./sections/SectionSeven"));
-const SectionEight = lazy(() => import("./sections/SectionEight"));
-const PresidentAndTutors = lazy(() => import("./sections/PresidentAndTutors"));
-const Footer = lazy(() => import("./sections/Footer"));
+const Communities = lazy(() => import("./components/Communities"));
+const Hero = lazy(() => import("./components/Hero"));
+const SectionFour = lazy(() => import("./components/SectionFour"));
+const SectionFive = lazy(() => import("./components/SectionFive"));
+const SectionSeven = lazy(() => import("./components/SectionSeven"));
+const SectionEight = lazy(() => import("./components/SectionEight"));
+const PresidentAndTutors = lazy(() => import("./components/PresidentAndTutors"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import software from "../assets/communities/software.png";
 import graphics from "../assets/communities/graphics.png";
 import dataScience from "../assets/communities/data-science.png";
 // import bed from "../assets/communities/bed.png";
-import Button from "../components/Button";
+import Button from "./Button";
 import { useModal } from "../hooks/useModal";
 import { useCommunity } from "../hooks/useCommunity";
 
