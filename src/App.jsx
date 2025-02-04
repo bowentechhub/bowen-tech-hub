@@ -8,10 +8,12 @@ const Modal = lazy(() => import("./modals/Modal"));
 const Communities = lazy(() => import("./components/Communities"));
 const Hero = lazy(() => import("./components/Hero"));
 const SectionFour = lazy(() => import("./components/SectionFour"));
-const SectionFive = lazy(() => import("./components/SectionFive"));
+const WhyBTH = lazy(() => import("./components/WhyBTH"));
 const SectionSeven = lazy(() => import("./components/SectionSeven"));
 const SectionEight = lazy(() => import("./components/SectionEight"));
-const PresidentAndTutors = lazy(() => import("./components/PresidentAndTutors"));
+const PresidentAndTutors = lazy(() =>
+  import("./components/PresidentAndTutors")
+);
 const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
       <Partners />
       <SectionThree />
       <SectionFour />
-      <SectionFive />
+      <WhyBTH />
       <Communities />
       <SectionSeven />
       <SectionEight />
