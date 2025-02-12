@@ -14,25 +14,34 @@ const schema = yup.object().shape({
     .min(3, "Full name must be at least 3 characters")
     .required("Full name is required"),
   community: yup.string().required("Please select a community"),
+  expertiseLevel: yup.string().when("community", {
+    is: (val) => val && val !== "",
+    then: (schema) => schema.required("Please select an expertise level"),
+  }),
 });
 
 const JoinCommunity = ({ setStep }) => {
-  const { communityOptions, selectedCommunity, setSelectedCommunity } = useCommunity();
+  const { communityOptions, selectedCommunity, setSelectedCommunity } =
+    useCommunity();
 
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      community: selectedCommunity || "", 
+      community: selectedCommunity || "",
+      expertiseLevel: "",
     },
   });
 
+  const communityValue = watch("community");
+
   const onSubmit = (data) => {
     console.log("Form Data:", data);
-    setSelectedCommunity(data.community)
+    setSelectedCommunity(data.community);
     setStep(2);
   };
 
@@ -68,79 +77,116 @@ const JoinCommunity = ({ setStep }) => {
         <div className="flex flex-col gap-2 md:gap-6">
           {/* Email Input */}
           <div>
-          <div
-            className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
-            style={{
-              background:
-                "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
-            }}
-          >
-            <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
-              <input
-                type="email"
-                placeholder="Email"
-                {...register("email")}
-                className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
-              />
+            <div
+              className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
+              }}
+            >
+              <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
+                <input
+                  style={{
+                    WebkitBoxShadow: "0 0 0px 1000px #120F48 inset",
+                    WebkitTextFillColor: "white",
+                  }}
+                  type="email"
+                  placeholder="Email"
+                  {...register("email")}
+                  className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
+                />
+              </div>
             </div>
-          </div>
-          {errors.email && (
-            <p className="text-red-500 text-xs">{errors.email.message}</p>
-          )}
+            {errors.email && (
+              <p className="text-red-500 text-xs">{errors.email.message}</p>
+            )}
           </div>
 
           {/* Full Name Input */}
           <div>
-          <div
-            className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
-            style={{
-              background:
-                "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
-            }}
-          >
-            <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                {...register("fullName")}
-                className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
-              />
+            <div
+              className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
+              }}
+            >
+              <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
+                <input
+                  style={{
+                    WebkitBoxShadow: "0 0 0px 1000px #120F48 inset",
+                    WebkitTextFillColor: "white",
+                  }}
+                  type="text"
+                  placeholder="Full Name"
+                  {...register("fullName")}
+                  className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
+                />
+              </div>
             </div>
-          </div>
-          {errors.fullName && (
-            <p className="text-red-500 text-xs">{errors.fullName.message}</p>
-          )}
+            {errors.fullName && (
+              <p className="text-red-500 text-xs">{errors.fullName.message}</p>
+            )}
           </div>
 
           {/* Community Select */}
           <div>
-          <div
-            className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
-            style={{
-              background:
-                "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
-            }}
-          >
-            <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
-              <select
-                {...register("community")}
-                className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
-              >
-                <option value="">Select a track</option>
-                {communityOptions.map((option, index) => (
-                  <option className="text-black" value={option} key={index}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+            <div
+              className="md:h-12 w-full rounded-lg p-[2px] flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(90deg, #002B8C 0%, #185DE7 44%, #002B8C 100%)",
+              }}
+            >
+              <div className="w-full h-full bg-[#120F48] rounded-lg flex items-center p-4">
+                <select
+                  {...register("community")}
+                  className="bg-transparent w-full outline-none text-sm md:text-base border-none text-[#F0F0F0] placeholder-[#A0A0A0]"
+                >
+                  <option value="">Select a track</option>
+                  {communityOptions.map((option, index) => (
+                    <option className="text-black" value={option} key={index}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
-          </div>
-          {errors.community && (
-            <p className="text-red-500 text-xs">{errors.community.message}</p>
-          )}
+            {errors.community && (
+              <p className="text-red-500 text-xs">{errors.community.message}</p>
+            )}
           </div>
         </div>
-
+        {communityValue && (
+          <div>
+            <p className="text-sm md:text-base mb-2">
+              Select your expertise level:
+            </p>
+            <div className="flex items-center gap-3">
+              <label>
+                <input
+                  type="radio"
+                  value="beginner"
+                  {...register("expertiseLevel")}
+                />{" "}
+                Beginner
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="professional"
+                  {...register("expertiseLevel")}
+                />{" "}
+                Professional
+              </label>
+            </div>
+            {errors.expertiseLevel && (
+              <p className="text-red-500 text-xs">
+                {errors.expertiseLevel.message}
+              </p>
+            )}
+          </div>
+        )}
         {/* Submit Button */}
         <button
           type="submit"
