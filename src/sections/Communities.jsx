@@ -67,7 +67,10 @@ const Communities = () => {
   };
 
   return (
-    <div className="px-[5%] flex flex-col items-center gap-[64px] mb-[100px] lg:mb-[180px]">
+    <div
+      className="px-[5%] flex flex-col items-center gap-[64px] mb-[100px] lg:mb-[180px]"
+      id="communities"
+    >
       <div className="text-center mb-[30px] lg:mb-[64px]">
         <p className="font-semibold text-xl leading-[30px] lg:text-[28px] lg:leading-[60px]  text-[#102327]">
           Our Communities

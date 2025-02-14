@@ -11,9 +11,11 @@ const SectionFour = lazy(() => import("./sections/SectionFour"));
 const WhyBTH = lazy(() => import("./sections/WhyBTH"));
 const SectionSeven = lazy(() => import("./sections/SectionSeven"));
 const SectionEight = lazy(() => import("./sections/SectionEight"));
-const PresidentAndTutors = lazy(() =>
-  import("./sections/PresidentAndTutors")
-);
+const PresidentAndTutors = lazy(() => import("./sections/PresidentAndTutors"));
+const Evidence = lazy(() => import("./sections/Evidence"));
+const BTHExecutives = lazy(() => import("./sections/BTHExecutives"));
+const FAQ = lazy(() => import("./sections/FAQ"));
+const CTA = lazy(() => import("./sections/CTA"));
 const Footer = lazy(() => import("./sections/Footer"));
 
 function App() {
@@ -38,6 +40,10 @@ function App() {
       <SectionSeven />
       <SectionEight />
       <PresidentAndTutors />
+      <Evidence />
+      <BTHExecutives />
+      <FAQ />
+      <CTA />
       <Footer />
     </Suspense>
   );

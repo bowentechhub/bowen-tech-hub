@@ -7,7 +7,10 @@ import linkedin from "../assets/icons/linkedin.svg";
 const Footer = () => {
   return (
     <>
-      <div className="bg-[#8800FF] px-[5%] pt-[106px] pb-[45px] flex justify-between flex-col flex-wrap md:flex-row gap-x-[50px] gap-y-[50px] text-white">
+      <div
+        className="bg-[#8800FF] px-[5%] pt-[106px] pb-[45px] flex justify-between flex-col flex-wrap md:flex-row gap-x-[50px] gap-y-[50px] text-white"
+        id="footer"
+      >
         <div className="flex flex-col gap-[35px]">
           <div className="flex flex-col gap-5">
             <div

@@ -11,6 +11,7 @@ export default {
         inter: ["Inter"],
       },
       backgroundImage: {
+        "cta-bg": "url('/cta-bg.svg')",
         heroGradient:
           "linear-gradient(124.84deg, #28004A 3.6%, #740002 46.77%, #5B005C 79.29%)",
         custom1:

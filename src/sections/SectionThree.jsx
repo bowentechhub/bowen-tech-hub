@@ -4,7 +4,7 @@ import about2 from "../assets/images/about2.jpeg";
 
 const SectionThree = () => {
   return (
-    <div className="px-[5%] py-[100px] lg:py-[180px] flex flex-col">
+    <div className="px-[5%] py-[100px] lg:py-[180px] flex flex-col" id='about'>
       <div className="flex flex-col">
         <p className="font-semibold text-xl lg:text-[28px] leading-[66px]">
           Who We Are

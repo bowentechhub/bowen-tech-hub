@@ -4,7 +4,7 @@ import Button from "../components/Button";
 const SectionSeven = () => {
   return (
     <>
-      <div className="px-[5%] flex 0 font-semibold">
+      <div className="px-[5%] flex 0 font-semibold" id="events">
         <p className="bg-[#1A022F] text-white px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-pointer">
           Program
         </p>

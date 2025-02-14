@@ -35,11 +35,11 @@ const PresidentAndTutors = () => {
           transformative learning experience.
         </p>
       </div>
-      <div className="ml-[5%] flex gap-[18px] lg:gap-[36px] overflow-x-scroll snap-both snap-mandatory">
+      <div className="ml-[5%] flex gap-[18px] lg:gap-[36px] overflow-x-scroll snap-both snap-mandatory pb-[14px] pr-[15px] snap-always">
         {people.map((person, index) => (
           <div
             key={index}
-            className="min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] bg-white rounded-[10px] z-10 relative snap-center"
+            className="min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] bg-white rounded-[10px] z-10 relative snap-center shadow-[14px_12px_#520099]"
           >
             <div className="absolute text-[#102327] bottom-[40px] left-[20px]">
               <p className="font-semibold text-sm lg:text-[18px] lg:leading-[27px]">
