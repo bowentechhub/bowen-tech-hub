@@ -8,7 +8,10 @@ const Hero = () => {
   const { openModal } = useModal();
 
   return (
-    <div className="bg-heroGradient bg-[length:300%_100%] animate-smoothGradient">
+    <div
+      className="bg-heroGradient bg-[length:300%_100%] animate-smoothGradient"
+      id="hero"
+    >
       <div
         className="min-h-[100svh] relative overflow-hidden"
         style={{

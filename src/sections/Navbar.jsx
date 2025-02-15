@@ -37,7 +37,13 @@ const Navbar = () => {
         style={{ backdropFilter: "blur(20px)" }}
       >
         <div className="w-[90%] flex items-center justify-between">
-          <img src={logo} alt="bowen tech hub" className="h-[36.29px]" />
+          <Link to="hero" smooth={true}>
+            <img
+              src={logo}
+              alt="bowen tech hub"
+              className="h-[36.29px] cursor-pointer"
+            />
+          </Link>
           <div className="hidden lg:flex items-center gap-[10vw]">
             <div className="flex gap-[2.3vw] text-white text-[14px] leading-5">
               <Link offset={-60} to="about" smooth className="cursor-pointer">
