@@ -3,6 +3,7 @@ import twitter from "../assets/icons/twitter.svg";
 import instagram from "../assets/icons/instagram.svg";
 import tiktok from "../assets/icons/tiktok.svg";
 import linkedin from "../assets/icons/linkedin.svg";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -51,10 +52,31 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <p className="font-medium text-xl lg:text-2xl">Information</p>
           <div className="flex flex-col gap-4 text-sm lg:text-base lg:leading-[30px]">
-            <p className="cursor-pointer">FAQ</p>
+            <Link
+              to="faq"
+              offset={-60}
+              smooth={true}
+              className="cursor-pointer"
+            >
+              FAQ
+            </Link>
             <p className="cursor-pointer">Resources</p>
-            <p className="cursor-pointer">About Us</p>
-            <p className="cursor-pointer">Events</p>
+            <Link
+              to="about"
+              offset={-60}
+              smooth={true}
+              className="cursor-pointer"
+            >
+              About Us
+            </Link>
+            <Link
+              to="events"
+              offset={-60}
+              smooth={true}
+              className="cursor-pointer"
+            >
+              Events
+            </Link>
           </div>
         </div>
         <div className="flex flex-col gap-4">

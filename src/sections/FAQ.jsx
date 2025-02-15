@@ -32,7 +32,10 @@ const FAQ = () => {
   };
 
   return (
-    <div className="my-[100px] lg:my-[180px] flex flex-col gap-[30px] lg:gap-[64px] px-[5%]">
+    <div
+      className="my-[100px] lg:my-[180px] flex flex-col gap-[30px] lg:gap-[64px] px-[5%]"
+      id="faq"
+    >
       <div className="flex flex-col">
         <p className="font-semibold text-sm lg:text-[32px] lg:leading-[66px] text-[#1A022F]">
           Frequency Asked Question
