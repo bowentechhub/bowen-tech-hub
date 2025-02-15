@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
-import presidentImage from "../assets/images/president-Image.jpeg";
 import { motion, AnimatePresence } from "motion/react";
+import presidentImage from "../assets/images/person.jpeg";
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
@@ -72,7 +72,6 @@ const BTHExecutives = () => {
               exit="exit"
               className="flex flex-col md:flex-row md:items-center gap-[50px]"
             >
-              {" "}
               <img
                 src={presidentImage}
                 className="object-cover w-[300px] h-[400px] lg:min-w-[457px] lg:h-[537px] bg-white rounded-[10px] z-10 shadow-[14px_12px_#520099] overflow-hidden"
