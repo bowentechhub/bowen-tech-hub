@@ -45,6 +45,11 @@ const people = [
       "title": "Project Management Tutor"
     },
     {
+      "image": "/tutors/egbunike.JPEG",
+      "name": "Olisaemeka Egubnike",
+      "title": "Project Management Tutor"
+    },
+    {
       "image": "/tutors/adeola.jpeg",
       "name": "Ojekunle Adeola",
       "title": "Backend Development Tutor"
