@@ -42,7 +42,7 @@ const executives = [
   {
     name: "Oluwatimilehin Akinnirun",
     title: "Co-Head Sponsorship and Partnership, BTH",
-    image: "/executives/timilehin.jpg",
+    image: "/executives/timilehin.JPG",
   },
   {
     name: "Adeboye Blessing",
