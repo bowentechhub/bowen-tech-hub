@@ -8,10 +8,10 @@ const SectionSeven = () => {
         <p className="bg-[#1A022F] text-white px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-pointer">
           Program
         </p>
-        <p className="px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-pointer">
+        <p className="px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-not-allowed">
           Webinars
         </p>
-        <p className="px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-pointer">
+        <p className="px-4 md:px-[30px] text-md leading-9 lg:text-[22px] lg:leading-[66px] rounded-t-[10px] cursor-not-allowed">
           Events
         </p>
       </div>

@@ -12,7 +12,7 @@ export const CommunityProvider = ({ children }) => {
     "Software Engineering",
     "Cyber Security",
     "Product Design",
-    "Product Management",
+    "Project Management",
   ];
 
   return (

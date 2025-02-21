@@ -1,10 +1,42 @@
 import PropTypes from "prop-types";
 import Button from "../components/Button";
 import icon from "../assets/icons/download.svg";
-import {useCommunity} from '../hooks/useCommunity'
+import { useCommunity } from "../hooks/useCommunity";
 
 const DownloadCurriculum = ({ setStep }) => {
-  const {selectedCommunity}= useCommunity()
+  const { selectedCommunity } = useCommunity();
+
+  const curriculumFiles = {
+    "Front-End Development": null,
+    "Data Science/AI": "/curriculums/BTH DATA SCIENCE CURRICULUM UPDATED..docx",
+    "Back-End Development":
+      "/curriculums/Bowen Tech Hub Backend Development Curriculum.pdf",
+    "Graphics Design": null,
+    "Software Engineering": null,
+    "Cyber Security":
+      "/curriculums/Bowen Tech Hub Cybersecurity Curriculum.docx",
+    "Product Design":
+      "/curriculums/Updated Product Design Teaching Curriculum (1).pdf",
+    "Project Management": null,
+  };
+
+  const handleDownload = () => {
+    const fileUrl = curriculumFiles[selectedCommunity];
+
+    if (fileUrl) {
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.setAttribute("download", `${selectedCommunity}_curriculum`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("Curriculum file not found for this community.");
+    }
+
+    setStep(3);
+  };
+
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-6 justify-center items-center">
@@ -39,12 +71,7 @@ const DownloadCurriculum = ({ setStep }) => {
           <img src={icon} />
           <p className="text-xs md:text-sm">Download Curriculum</p>
         </div>
-        <Button
-          text="Download"
-          onClick={() => {
-            setStep(3);
-          }}
-        />
+        <Button text="Download" onClick={handleDownload} />
       </div>
       <div
         className="w-full"

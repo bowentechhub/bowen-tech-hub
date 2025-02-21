@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { FaPlus } from "react-icons/fa6";
 
 const questions = [
   {
@@ -44,16 +45,28 @@ const FAQ = () => {
           Some of our frequently asked questions
         </p>
       </div>
-      <div className="flex flex-col gap-4 lg:gap-11">
+      <div className="flex flex-col gap-4 lg:gap-10">
         {questions.map((question, index) => (
           <div
             key={index}
-            className="flex flex-col border bg-[#D9D9D9] rounded-[10px] px-[3%] py-4 lg:py-[26px] cursor-pointer"
+            className={`flex flex-col border rounded-[10px] px-[3%] py-4 lg:py-[26px] cursor-pointer lg:border-[2.5px] ${
+              expandedIndex === index
+                ? "bg-[#4D1C78] border-[#4D1C78] text-white"
+                : "text-[#1F1931] border-[#C6BFD0]"
+            }`}
             onClick={() => toggleExpand(index)}
           >
-            <p className="text-sm lg:text-[18px] lg:leading-[27px] text-[#102327]">
-              {question.question}
-            </p>
+            <div className="flex justify-between items-center">
+              <p className="text-sm lg:text-[18px] lg:leading-[27px]">
+                {question.question}
+              </p>
+              <FaPlus
+                className={`size-[15px] lg:size-[21px] transition-all duration-300 ${
+                  expandedIndex === index ? "transform rotate-45" : ""
+                }`}
+                color={expandedIndex === index ? "#FFFFFF" : "#520099"}
+              />
+            </div>
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{
@@ -63,9 +76,7 @@ const FAQ = () => {
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <p className="text-xs lg:text-[14px] text-[#102327] pt-2">
-                {question.answer}
-              </p>
+              <p className="text-xs lg:text-[14px] pt-2">{question.answer}</p>
             </motion.div>
           </div>
         ))}

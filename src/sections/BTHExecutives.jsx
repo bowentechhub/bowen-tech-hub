@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import { motion, AnimatePresence } from "motion/react";
-import presidentImage from "../assets/images/person.jpeg";
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
@@ -9,31 +8,72 @@ const transitionVariants = {
   exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
 };
 
-const people = [
-  { name: "Stephan Oshiomogho", title: "President, Product Design Community" },
-  { name: "Ojedokun Olaniyi", title: "Product Design Instructor" },
+const executives = [
   {
-    name: "Iretomiwa Adebiyi Judith",
-    title: "President, Project Management Community",
+    name: "Alagbe Peace",
+    title: "President, BTH",
+    image: "/executives/peace.jpeg",
   },
-  { name: "Okpala Peniel", title: "Project Management Tutor" },
-  { name: "Adekeye Adeola", title: "President, Graphic Design Community" },
   {
-    name: "Adedolapo Atiba",
-    title: "President, Backend Development Community",
+    name: "Daniella Afegbai",
+    title: "Vice-President, BTH",
+    image: "/executives/daniella.jpeg",
   },
-  { name: "Ojekunle Adeola", title: "Backend Development Tutor" },
-  { name: "Maxwell Samuel Magaji", title: "Frontend Development Tutor" },
-  { name: "Bolaji Daniel", title: "President, Software Development Community" },
   {
-    name: "Adebayo Abdul-Salam",
-    title: "President, Data Science/AI Community",
+    name: "Odetokun Treasure Oluwatobi",
+    title: "General Secretary, BTH",
+    image: "/executives/treasure.jpg",
   },
-  { name: "Samuel Adeniyi", title: "President, Cyber Security Community" },
+  {
+    name: "Kadri Joy Oluwaseyifunmi",
+    title: "Financial Secretary, BTH",
+    image: "/executives/joy.jpg",
+  },
+  {
+    name: "Michael Eriayooluwa Helmer",
+    title: "Community Lead, BTH",
+    image: "/executives/michael.jpg",
+  },
+  {
+    name: "Eniola Falade Sharon",
+    title: "Head of Partnerships and Sponsorship, BTH",
+    image: "/executives/eniola.jpg",
+  },
+  {
+    name: "Oluwatimilehin Akinnirun",
+    title: "Co-Head Sponsorship and Partnership, BTH",
+    image: "/executives/timilehin.jpg",
+  },
+  {
+    name: "Adeboye Blessing",
+    title: "Designer Lead, BTH",
+    image: "/executives/blessing.JPG",
+  },
+  {
+    name: "Immanuel Antonza",
+    title: "Videography Lead, BTH",
+    image: "/executives/immanuel.jpg",
+  },
+  {
+    name: "Ene-Edah Oghenemine",
+    title: "Content Lead, BTH",
+    image: "/executives/ene-edah.JPG",
+  },
+  {
+    name: "Alabi Boluwatife",
+    title: "Content Writer, BTH",
+    image: "/executives/boluwatife.jpg",
+  },
+  {
+    name: "Odewumi Oluwabukunmi",
+    title: "Volunteer Lead, BTH",
+    image: "/executives/bukunmi.jpg",
+  },
 ];
 
 const BTHExecutives = () => {
-  const [shown, setShown] = useState("president");
+  const [shown, setShown] = useState("executives");
+  const [selectedExecutive, setSelectedExecutive] = useState(null);
 
   return (
     <div className="py-[50px] lg:py-[100px] px-[5%] bg-[#8800FF] text-white">
@@ -47,15 +87,7 @@ const BTHExecutives = () => {
           </div>
           <div className="rounded-[16px] p-2 lg:py-5 lg:px-[22px] bg-white flex gap-[14px] items-center ml-auto">
             <Button
-              text="President Bio"
-              background={shown === "executives" && "#BDBDBD"}
-              onClick={() => {
-                setShown("president");
-              }}
-            />
-            <Button
               text="View Executives"
-              background={shown === "president" && "#BDBDBD"}
               onClick={() => {
                 setShown("executives");
               }}
@@ -63,9 +95,9 @@ const BTHExecutives = () => {
           </div>
         </div>
         <AnimatePresence mode="wait">
-          {shown === "president" && (
+          {shown === "executiveDetails" && (
             <motion.div
-              key="president"
+              key="executiveDetails"
               variants={transitionVariants}
               initial="initial"
               animate="animate"
@@ -73,13 +105,14 @@ const BTHExecutives = () => {
               className="flex flex-col md:flex-row md:items-center gap-[50px]"
             >
               <img
-                src={presidentImage}
-                className="object-cover w-[300px] h-[400px] lg:min-w-[457px] lg:h-[537px] bg-white rounded-[10px] z-10 shadow-[14px_12px_#520099] overflow-hidden"
+                src={selectedExecutive?.image}
+                alt={selectedExecutive?.name}
+                className="object-cover min-w-[300px] h-[400px] lg:min-w-[457px] lg:h-[537px] bg-white rounded-[10px] z-10 shadow-[14px_12px_#520099] overflow-hidden"
               />
               <div className="flex flex-col gap-[44px]">
                 <div className="flex flex-col gap-[10px]">
                   <p className="text-[#ECECEC] font-medium lg:text-[22px] lg:leading-[33px]">
-                    President, Bowen techhub
+                    {selectedExecutive?.title}
                   </p>
                   <p className="font-semibold text-lg lg:text-[24px] lg:leading-[36px]">
                     Alagbe Peace is a Product and Brand design, Lagos, Nigeria.
@@ -100,14 +133,17 @@ const BTHExecutives = () => {
               exit="exit"
               className="flex gap-[18px] lg:gap-[36px] overflow-x-scroll snap-both snap-mandatory pb-[14px] pr-[15px] snap-always"
             >
-              {" "}
-              {people.map((person, index) => (
+              {executives.map((person, index) => (
                 <div
                   key={index}
-                  className="relative min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] bg-white rounded-[10px] z-10 snap-center shadow-[14px_12px_#520099] overflow-hidden"
+                  className="relative min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] max-w-[300px] max-h-[400px] lg:max-w-[457px] lg:max-h-[537px] bg-white rounded-[10px] z-10 snap-center shadow-[14px_12px_#520099] overflow-hidden cursor-pointer"
+                  onClick={() => {
+                    setSelectedExecutive(person);
+                    setShown("executiveDetails");
+                  }}
                 >
                   <img
-                    src={presidentImage}
+                    src={person?.image}
                     className="w-full h-full object-cover"
                     alt={person.name}
                   />

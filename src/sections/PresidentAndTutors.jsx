@@ -1,25 +1,60 @@
 const people = [
-  { name: "Stephan Oshiomogho", title: "President, Product Design Community" },
-  { name: "Ojedokun Olaniyi", title: "Product Design Instructor" },
-  {
-    name: "Iretomiwa Adebiyi Judith",
-    title: "President, Project Management Community",
-  },
-  { name: "Okpala Peniel", title: "Project Management Tutor" },
-  { name: "Adekeye Adeola", title: "President, Graphic Design Community" },
-  {
-    name: "Adedolapo Atiba",
-    title: "President, Backend Development Community",
-  },
-  { name: "Ojekunle Adeola", title: "Backend Development Tutor" },
-  { name: "Maxwell Samuel Magaji", title: "Frontend Development Tutor" },
-  { name: "Bolaji Daniel", title: "President, Software Development Community" },
-  {
-    name: "Adebayo Abdul-Salam",
-    title: "President, Data Science/AI Community",
-  },
-  { name: "Samuel Adeniyi", title: "President, Cyber Security Community" },
-];
+    {
+      "image": "/tutors/stephan.jpg",
+      "name": "Stephan Oshiomogho",
+      "title": "President, Product Design Community"
+    },
+    {
+      "image": "/tutors/judith.PNG",
+      "name": "Iretomiwa Adebiyi Judith",
+      "title": "President, Project Management Community"
+    },
+    {
+      "image": "/tutors/adekeye.JPG",
+      "name": "Adekeye Adeola",
+      "title": "President, Graphic Design Community"
+    },
+    {
+      "image": "/tutors/adedolapo.jpeg",
+      "name": "Adedolapo Atiba",
+      "title": "President, Backend Development Community"
+    },
+    {
+      "image": "/tutors/bolaji.jpg",
+      "name": "Bolaji Daniel",
+      "title": "President, Software Development Community"
+    },
+    {
+      "image": "/tutors/adebayo.jpg",
+      "name": "Adebayo Abdul-Salam",
+      "title": "President, Data Science/AI Community"
+    },
+    {
+      "image": "/tutors/samuel.jpg",
+      "name": "Samuel Adeniyi",
+      "title": "President, Cyber Security Community"
+    },
+    {
+      "image": "/tutors/olaniyi.jpg",
+      "name": "Ojedokun Olaniyi",
+      "title": "Product Design Instructor"
+    },
+    {
+      "image": "/tutors/peniel.jpg",
+      "name": "Okpala Peniel",
+      "title": "Project Management Tutor"
+    },
+    {
+      "image": "/tutors/adeola.HEIC",
+      "name": "Ojekunle Adeola",
+      "title": "Backend Development Tutor"
+    },
+    {
+      "image": "/tutors/maxwell.jpg",
+      "name": "Maxwell Samuel Magaji",
+      "title": "Frontend Development Tutor"
+    }
+  ]
 
 const PresidentAndTutors = () => {
   return (
@@ -39,9 +74,15 @@ const PresidentAndTutors = () => {
         {people.map((person, index) => (
           <div
             key={index}
-            className="min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] bg-white rounded-[10px] z-10 relative snap-center shadow-[14px_12px_#520099]"
+            className="min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] max-w-[300px] max-h-[400px] lg:max-w-[457px] lg:max-h-[537px] bg-white rounded-[10px] z-10 relative snap-center shadow-[14px_12px_#520099] overflow-hidden"
           >
-            <div className="absolute text-[#102327] bottom-[40px] left-[20px]">
+            <img
+              src={person?.image}
+              className="w-full h-full object-cover"
+              alt={person.name}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80 rounded-[10px]" />
+            <div className="absolute text-[white] bottom-[40px] left-[20px]">
               <p className="font-semibold text-sm lg:text-[18px] lg:leading-[27px]">
                 {person.name}
               </p>

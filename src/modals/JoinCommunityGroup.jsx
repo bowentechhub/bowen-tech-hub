@@ -5,9 +5,64 @@ import whatsapp from "../assets/logos/whatsapp.svg";
 import { useCommunity } from "../hooks/useCommunity";
 import { useModal } from "../hooks/useModal";
 
+const group = [
+  {
+    community: "Front-End Development",
+    link: "https://chat.whatsapp.com/FxXiRpXSU9r0F4rSBokkKm",
+  },
+  {
+    community: "Back-End Development",
+    link: "https://chat.whatsapp.com/IZfzsc3ipiX0GsmmCA1OxM",
+  },
+  {
+    community: "Product Design",
+    link: "https://chat.whatsapp.com/Ebx0vzA9tNW7IzZB6b9wKS",
+  },
+  {
+    community: "Mobile Development",
+    link: "https://chat.whatsapp.com/FtAnEK5VpkqEEymIp6oXJU",
+  },
+  {
+    community: "Cyber Security",
+    link: "https://chat.whatsapp.com/JKw1BperisNJ21sRcMpkUQ",
+  },
+  {
+    community: "Project Management",
+    link: "https://chat.whatsapp.com/Dn3qZKcl7plLHDOaNcFeuQ",
+  },
+  {
+    community: "Graphics Design",
+    link: "https://chat.whatsapp.com/KzOCC1sdJzrArQl95yyoq1",
+  },
+  {
+    community: "Data Science/AI",
+    link: "https://chat.whatsapp.com/Kw3psZF3VSw193g4yHNvcu",
+  },
+  {
+    community: "Software Engineering",
+    link: null, // No link provided
+  },
+  {
+    community: "Project Management",
+    link: null, // No link provided
+  },
+];
+
 const JoinCommunityGroup = () => {
   const { selectedCommunity } = useCommunity();
   const { closeModal } = useModal();
+  const joinGroup = () => {
+    const communityGroup = group.find(
+      (item) => item.community.toString() === selectedCommunity.toString()
+    );
+
+    if (communityGroup && communityGroup.link) {
+      window.open(communityGroup.link, "_blank");
+    } else {
+      alert("No group link available for this community.");
+    }
+    closeModal();
+  };
 
   return (
     <div className="flex flex-col gap-10">
@@ -55,7 +110,9 @@ const JoinCommunityGroup = () => {
         <Button
           text="Join"
           background="linear-gradient(90deg, #27A737 0%, #226028 49.5%, #27A737 100%)"
-          onClick={closeModal}
+          onClick={() => {
+            joinGroup();
+          }}
         />
       </div>
       <div

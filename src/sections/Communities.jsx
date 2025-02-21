@@ -2,7 +2,10 @@ import fed from "../assets/communities/fed.png";
 import software from "../assets/communities/software.png";
 import graphics from "../assets/communities/graphics.png";
 import dataScience from "../assets/communities/data-science.png";
-// import bed from "../assets/communities/bed.png";
+import bed from "../assets/communities/bed.png";
+import cyb from "../assets/communities/cyb.jpeg";
+import product from "../assets/communities/product.jpeg";
+import productManagement from "../assets/communities/productManagement.jpeg";
 import Button from "../components/Button";
 import { useModal } from "../hooks/useModal";
 import { useCommunity } from "../hooks/useCommunity";
@@ -22,8 +25,7 @@ const Communities = () => {
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
     },
     {
-      image:
-        "https://res.cloudinary.com/djwhn58rp/image/upload/v1738666951/jf7twlj52teagtldgqvb.png",
+      image: bed,
       name: "Back-End Development",
       description:
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
@@ -41,20 +43,20 @@ const Communities = () => {
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
     },
     {
-      image: fed,
+      image: cyb,
       name: "Cyber Security",
       description:
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
     },
     {
-      image: dataScience,
+      image: product,
       name: "Product Design",
       description:
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
     },
     {
-      image: graphics,
-      name: "Product Management",
+      image: productManagement,
+      name: "Project Management",
       description:
         "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
     },

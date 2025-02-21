@@ -46,7 +46,7 @@ const Footer = () => {
             <p className="cursor-pointer">Software Engineering</p>
             <p className="cursor-pointer">Cyber Security</p>
             <p className="cursor-pointer">Product Design</p>
-            <p className="cursor-pointer">Product Management</p>
+            <p className="cursor-pointer">Project Management</p>
           </div>
         </div>
         <div className="flex flex-col gap-4">

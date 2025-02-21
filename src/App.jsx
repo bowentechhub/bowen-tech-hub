@@ -12,7 +12,7 @@ const WhyBTH = lazy(() => import("./sections/WhyBTH"));
 const SectionSeven = lazy(() => import("./sections/SectionSeven"));
 const SectionEight = lazy(() => import("./sections/SectionEight"));
 const PresidentAndTutors = lazy(() => import("./sections/PresidentAndTutors"));
-const Evidence = lazy(() => import("./sections/Evidence"));
+const Testimonials = lazy(() => import("./sections/Testimonials"));
 const BTHExecutives = lazy(() => import("./sections/BTHExecutives"));
 const FAQ = lazy(() => import("./sections/FAQ"));
 const CTA = lazy(() => import("./sections/CTA"));
@@ -40,7 +40,7 @@ function App() {
       <SectionSeven />
       <SectionEight />
       <PresidentAndTutors />
-      <Evidence />
+      <Testimonials />
       <BTHExecutives />
       <FAQ />
       <CTA />
