@@ -1,5 +1,11 @@
 import { Suspense, lazy } from "react";
 import logo from "./assets/logos/logo.svg";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 
 const Navbar = lazy(() => import("./sections/Navbar"));
 const Partners = lazy(() => import("./sections/Partners"));
@@ -18,7 +24,7 @@ const FAQ = lazy(() => import("./sections/FAQ"));
 const CTA = lazy(() => import("./sections/CTA"));
 const Footer = lazy(() => import("./sections/Footer"));
 
-function App() {
+const LandingPage = () => {
   return (
     <Suspense
       fallback={
@@ -47,6 +53,17 @@ function App() {
       <Footer />
     </Suspense>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

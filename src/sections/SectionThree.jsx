@@ -26,10 +26,7 @@ const SectionThree = () => {
                 "2px 2px 24.2px 0px #0000000A, -1px 0px 26px 0px #0000000A",
             }}
           >
-            <img
-              src={about1}
-              className="size-full object-cover hover:scale-[1.2] transition-all duration-300"
-            />
+            <img src={about1} className="image-hover-effect" />
           </div>
           <div
             className="border-[4px] lg:border-[10px] border-white w-1/2 lg:w-full max-h-[300px] overflow-hidden"
@@ -38,10 +35,7 @@ const SectionThree = () => {
                 "2px 2px 24.2px 0px #0000000A, -1px 0px 26px 0px #0000000A",
             }}
           >
-            <img
-              src={about2}
-              className="size-full object-cover hover:scale-[1.2] transition-all duration-300"
-            />
+            <img src={about2} className="image-hover-effect" />
           </div>
         </div>
         <div className="flex flex-col gap-[43px] lg:gap-[86px] w-full lg:w-1/2 lg:flex-1">
@@ -63,10 +57,7 @@ const SectionThree = () => {
                 "2px 2px 24.2px 0px #0000000A, -1px 0px 26px 0px #0000000A",
             }}
           >
-            <img
-              src={learn}
-              className="size-full object-cover hover:scale-[1.2] transition-all duration-300"
-            />
+            <img src={learn} className="image-hover-effect" />
           </div>
         </div>
       </div>

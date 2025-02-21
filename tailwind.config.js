@@ -40,6 +40,9 @@ export default {
         scroll: "scroll 15s infinite linear",
         smoothGradient: "smoothGradient 12s infinite linear",
       },
+      scale: {
+        '120': '1.2',
+      },
     },
   },
   plugins: [],

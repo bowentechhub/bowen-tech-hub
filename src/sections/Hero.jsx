@@ -54,10 +54,10 @@ const Hero = () => {
             </p>
             <img src={bg} alt="" className="max-w-[603.45px]" />
             <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[85%] w-[90%] border-[17px] rounded-l-full rounded-r-[1000px]  border-[#EDEDED] overflow-hidden">
-              <img src={img1} className="size-full object-cover" />
+              <img src={img1} className="image-hover-effect" />
             </div>
             <div className="absolute size-[256.79px] overflow-hidden bottom-0 left-0 translate-y-[30%] rounded-[34.24px] border-[12.48px] border-[#EDEDED]">
-              <img src={img2} className="size-full object-cover" />
+              <img src={img2} className="image-hover-effect" />
             </div>
           </div>
         </div>

@@ -52,10 +52,16 @@
     }
 }
 
-input, select {
+input,
+select {
     background-color: transparent !important;
     /* -webkit-box-shadow: 0 0 0px 1000px #120F48 inset !important;
     box-shadow: 0 0 0px 1000px #120F48 inset !important;
     -webkit-text-fill-color: #F0F0F0 !important; */
-  }
-  
+}
+
+@layer utilities {
+    .image-hover-effect {
+        @apply size-full object-cover transition-all duration-500 hover:scale-120;
+    }
+}

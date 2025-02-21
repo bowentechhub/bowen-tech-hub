@@ -136,7 +136,7 @@ const BTHExecutives = () => {
               {executives.map((person, index) => (
                 <div
                   key={index}
-                  className="relative min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] max-w-[300px] max-h-[400px] lg:max-w-[457px] lg:max-h-[537px] bg-white rounded-[10px] z-10 snap-center shadow-[14px_12px_#520099] overflow-hidden cursor-pointer"
+                  className="relative min-w-[300px] min-h-[400px] lg:min-w-[457px] lg:min-h-[537px] max-w-[300px] max-h-[400px] lg:max-w-[457px] lg:max-h-[537px] bg-white rounded-[10px] z-10 snap-center shadow-[14px_12px_#520099] overflow-hidden cursor-pointer group"
                   onClick={() => {
                     setSelectedExecutive(person);
                     setShown("executiveDetails");
@@ -144,7 +144,7 @@ const BTHExecutives = () => {
                 >
                   <img
                     src={person?.image}
-                    className="w-full h-full object-cover"
+                    className="size-full object-cover transition-all duration-500 group-hover:scale-[1.1]"
                     alt={person.name}
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80 rounded-[10px]" />

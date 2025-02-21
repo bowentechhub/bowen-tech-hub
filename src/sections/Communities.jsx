@@ -92,11 +92,13 @@ const Communities = () => {
             }}
             className="p-[5%] rounded-[15.67px]"
           >
-            <img
-              src={comm?.image}
-              alt={comm.name}
-              className="rounded-[7.84px] mb-[25px] lg:mb-[58px] w-full bg-[#E4E4E4] min-h-[201.06px] max-h-[201.06px] lg:min-h-[291.06px] lg:max-h-[291.06px] object-cover"
-            />
+            <div className="rounded-[7.84px] mb-[25px] lg:mb-[58px] w-full bg-[#E4E4E4] min-h-[201.06px] max-h-[201.06px] lg:min-h-[291.06px] lg:max-h-[291.06px] object-cover overflow-hidden">
+              <img
+                src={comm?.image}
+                alt={comm.name}
+                className="image-hover-effect"
+              />
+            </div>
             <div className="flex flex-col mb-[25px] lg:mb-[58px]">
               <p className="font-semibold lg:text-[22px] lg:leading-[51.72px]">
                 {comm.name}
