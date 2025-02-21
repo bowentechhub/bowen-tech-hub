@@ -45,7 +45,7 @@ const people = [
       "title": "Project Management Tutor"
     },
     {
-      "image": "/tutors/adeola.HEIC",
+      "image": "/tutors/adeola.jpeg",
       "name": "Ojekunle Adeola",
       "title": "Backend Development Tutor"
     },
