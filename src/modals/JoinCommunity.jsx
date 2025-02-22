@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useCommunity } from "../hooks/useCommunity";
-
+import { useState } from "react";
+import { addCommunityMember } from "../services/community";
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -21,6 +22,8 @@ const schema = yup.object().shape({
 });
 
 const JoinCommunity = ({ setStep }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const { communityOptions, selectedCommunity, setSelectedCommunity } =
     useCommunity();
 
@@ -39,10 +42,19 @@ const JoinCommunity = ({ setStep }) => {
 
   const communityValue = watch("community");
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    setSelectedCommunity(data.community);
-    setStep(2);
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      await addCommunityMember(data);
+      setSelectedCommunity(data.community);
+      setStep(2);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -70,6 +82,9 @@ const JoinCommunity = ({ setStep }) => {
       </div>
 
       {/* Form Section */}
+      {error && (
+        <div className="text-red-500 text-sm text-center">{error}</div>
+      )}
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-3 md:gap-8 w-[90%] md:w-[80%] mx-auto"
@@ -190,13 +205,15 @@ const JoinCommunity = ({ setStep }) => {
         {/* Submit Button */}
         <button
           type="submit"
+          disabled={isLoading}
           className="flex items-center justify-center w-full py-4 md:h-12 select-none cursor-pointer rounded-lg text-sm md:text-base"
           style={{
             background:
               "linear-gradient(90deg, #520099 0%, #8800FF 49.5%, #520099 100%)",
+            opacity: isLoading ? 0.7 : 1,
           }}
         >
-          Join our community
+          {isLoading ? "Processing..." : "Join our community"}
         </button>
       </form>
     </div>
