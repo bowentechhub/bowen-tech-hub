@@ -6,6 +6,8 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Navbar = lazy(() => import("./sections/Navbar"));
 const Partners = lazy(() => import("./sections/Partners"));
