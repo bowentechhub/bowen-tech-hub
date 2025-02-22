@@ -60,13 +60,8 @@ select {
     -webkit-text-fill-color: #F0F0F0 !important; */
 }
 
-img,
-svg {
-    image-rendering: -webkit-optimize-contrast;
-}
-
 @layer utilities {
     .image-hover-effect {
-        @apply w-full h-full object-cover transition-all duration-500 hover:scale-120;
+        @apply size-full object-cover transition-all duration-500 hover:scale-120;
     }
 }
