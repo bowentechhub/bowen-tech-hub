@@ -23,6 +23,7 @@ const BTHExecutives = lazy(() => import("./sections/BTHExecutives"));
 const FAQ = lazy(() => import("./sections/FAQ"));
 const CTA = lazy(() => import("./sections/CTA"));
 const Footer = lazy(() => import("./sections/Footer"));
+const ExecutiveDetails = lazy(() => import("./sections/ExecutiveDetails"));
 
 const LandingPage = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/executives/:name" element={<ExecutiveDetails />} />
       </Routes>
     </Router>
   );

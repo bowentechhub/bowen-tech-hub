@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import { motion, AnimatePresence } from "motion/react";
+import { executives } from "../helper/executives";
+import { useNavigate } from "react-router-dom";
 
 const transitionVariants = {
   initial: { opacity: 0, y: 20 },
@@ -8,72 +10,10 @@ const transitionVariants = {
   exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
 };
 
-const executives = [
-  {
-    name: "Alagbe Peace",
-    title: "President, BTH",
-    image: "/executives/peace.jpeg",
-  },
-  {
-    name: "Daniella Afegbai",
-    title: "Vice-President, BTH",
-    image: "/executives/daniella.jpeg",
-  },
-  {
-    name: "Odetokun Treasure Oluwatobi",
-    title: "General Secretary, BTH",
-    image: "/executives/treasure.jpg",
-  },
-  {
-    name: "Kadri Joy Oluwaseyifunmi",
-    title: "Financial Secretary, BTH",
-    image: "/executives/joy.jpg",
-  },
-  {
-    name: "Michael Eriayooluwa Helmer",
-    title: "Community Lead, BTH",
-    image: "/executives/michael.jpg",
-  },
-  {
-    name: "Eniola Falade Sharon",
-    title: "Head of Partnerships and Sponsorship, BTH",
-    image: "/executives/eniola.jpg",
-  },
-  {
-    name: "Oluwatimilehin Akinnirun",
-    title: "Co-Head Sponsorship and Partnership, BTH",
-    image: "/executives/timilehin.JPG",
-  },
-  {
-    name: "Adeboye Blessing",
-    title: "Designer Lead, BTH",
-    image: "/executives/blessing.JPG",
-  },
-  {
-    name: "Immanuel Antonza",
-    title: "Videography Lead, BTH",
-    image: "/executives/immanuel.jpg",
-  },
-  {
-    name: "Ene-Edah Oghenemine",
-    title: "Content Lead, BTH",
-    image: "/executives/ene-edah.JPG",
-  },
-  {
-    name: "Alabi Boluwatife",
-    title: "Content Writer, BTH",
-    image: "/executives/boluwatife.jpg",
-  },
-  {
-    name: "Odewumi Oluwabukunmi",
-    title: "Volunteer Lead, BTH",
-    image: "/executives/bukunmi.jpg",
-  },
-];
-
 const BTHExecutives = () => {
   const [shown, setShown] = useState("executives");
   const [selectedExecutive, setSelectedExecutive] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className="py-[50px] lg:py-[100px] px-[5%] bg-[#8800FF] text-white">
@@ -120,7 +60,17 @@ const BTHExecutives = () => {
                     designs. Much of him ...
                   </p>
                 </div>
-                <Button text="Read More" background="#FB00FF" />
+                <Button
+                  text="Read More"
+                  background="#FB00FF"
+                  onClick={() =>
+                    navigate(
+                      `/executives/${encodeURIComponent(
+                        selectedExecutive.name
+                      )}`
+                    )
+                  }
+                />
               </div>
             </motion.div>
           )}
