@@ -27,15 +27,7 @@ const ExecutiveDetails = lazy(() => import("./sections/ExecutiveDetails"));
 
 const LandingPage = () => {
   return (
-    <Suspense
-      fallback={
-        <div className="fixed h-screen w-screen flex justify-center items-center bg-white">
-          <div className="animate-spin">
-            <img src={logo} className="animate-pulse w-[100px] md:w-[150px]" />
-          </div>
-        </div>
-      }
-    >
+    <>
       <Modal />
       <Navbar />
       <Hero />
@@ -52,18 +44,31 @@ const LandingPage = () => {
       <FAQ />
       <CTA />
       <Footer />
-    </Suspense>
+    </>
   );
 };
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-        <Route path="/executives/:name" element={<ExecutiveDetails />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="fixed h-screen w-screen flex justify-center items-center bg-white">
+            <div className="animate-spin">
+              <img
+                src={logo}
+                className="animate-pulse w-[100px] md:w-[150px]"
+              />
+            </div>
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/executives/:name" element={<ExecutiveDetails />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 };

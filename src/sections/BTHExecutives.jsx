@@ -52,25 +52,33 @@ const BTHExecutives = () => {
               <div className="flex flex-col gap-[44px]">
                 <div className="flex flex-col gap-[10px]">
                   <p className="text-[#ECECEC] font-medium lg:text-[22px] lg:leading-[33px]">
-                    {selectedExecutive?.title}
+                    {selectedExecutive?.title}, Bowen Tech Hub
                   </p>
-                  <p className="font-semibold text-lg lg:text-[24px] lg:leading-[36px]">
-                    Alagbe Peace is a Product and Brand design, Lagos, Nigeria.
-                    He helps brands tell compelling stories via creative
-                    designs. Much of him ...
-                  </p>
+                  {selectedExecutive.paragraph1 && (
+                    <p className="font-semibold text-lg lg:text-[24px] lg:leading-[36px]">
+                      {selectedExecutive?.paragraph1
+                        .split(" ")
+                        .slice(0, 20)
+                        .join(" ")}
+                      {selectedExecutive?.paragraph1.split(" ").length > 20
+                        ? "..."
+                        : ""}
+                    </p>
+                  )}
                 </div>
-                <Button
-                  text="Read More"
-                  background="#FB00FF"
-                  onClick={() =>
-                    navigate(
-                      `/executives/${encodeURIComponent(
-                        selectedExecutive.name
-                      )}`
-                    )
-                  }
-                />
+                {selectedExecutive.paragraph1 && (
+                  <Button
+                    text="Read More"
+                    background="#FB00FF"
+                    onClick={() =>
+                      navigate(
+                        `/executives/${encodeURIComponent(
+                          selectedExecutive.name
+                        )}`
+                      )
+                    }
+                  />
+                )}
               </div>
             </motion.div>
           )}
@@ -102,7 +110,9 @@ const BTHExecutives = () => {
                     <p className="font-semibold text-sm lg:text-[18px] lg:leading-[27px]">
                       {person.name}
                     </p>
-                    <p className="text-xs lg:text-[14px]">{person.title}</p>
+                    <p className="text-xs lg:text-[14px]">
+                      {person.title}, BTH
+                    </p>
                   </div>
                 </div>
               ))}
