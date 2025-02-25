@@ -51,8 +51,8 @@ export const executives = [
   },
   {
     name: "Oluwatimilehin Akinnirun",
+    image: '/executives/timi.JPG',
     title: "Co-Head Sponsorship and Partnership",
-    image: "/executives/timilehin.JPG",
     paragraph1:
       "Her work spans leadership roles, event sponsorships, and financial literacy advocacy, showcasing her ability to lead and innovate. She combines strong communication skills with a results-driven mindset, making her a valuable asset in any professional setting.",
     paragraph2:
