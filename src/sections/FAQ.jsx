@@ -4,27 +4,30 @@ import { FaPlus } from "react-icons/fa6";
 
 const questions = [
   {
-    question: "What is the best way to get started with the app?",
-    answer:
-      "The best way to get started is to read the documentation. We provide very detailed documentation that will help you get started with the app.",
+    question: "How long does the cohort last?",
+    answer: "The cohort runs for a total of seven months.",
   },
   {
-    question: "How do I get access to the app?",
+    question: "Will I work on portfolio-worthy projects?",
     answer:
-      "You can get access to the app by signing up on our website. You will get an email with instructions on how to get started.",
+      "Yes! You’ll have the opportunity to build high-quality projects that showcase your skills and enhance your portfolio.",
   },
   {
-    question: "Can I use the app on multiple devices?",
+    question: "How many classes are held per week?",
     answer:
-      "Yes, you can use the app on multiple devices. You just need to sign in with the same account on all your devices.",
+      "There are two classes per week—one online session and one in-person session.",
   },
   {
-    question: "Is the app available on mobile devices?",
+    question: "What is the class structure like?",
     answer:
-      "Yes, the app is available on both iOS and Android devices. You can download it from the App Store or Google Play Store.",
+      "The program combines both online and physical classes, ensuring a flexible and interactive learning experience.",
+  },
+  {
+    question: "Will I receive a certificate upon completion?",
+    answer:
+      "Yes! Participants will be awarded a certificate upon successfully completing the cohort.",
   },
 ];
-
 const FAQ = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 

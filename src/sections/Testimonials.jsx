@@ -1,30 +1,33 @@
-import person from "../assets/images/person.jpeg";
+import ayoola from "../assets/testimonials/ayoola.jpeg";
+import owoade from "../assets/testimonials/owoade.jpeg";
+import jason from "../assets/testimonials/jason.jpeg";
+import jesse from "../assets/testimonials/jesse.jpeg";
 import { FaQuoteRight } from "react-icons/fa";
 
 const items = [
   {
-    text: "“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the bestto be more than my expectations and so far there have been no problems. LaslesVPN always the best  more than my expectations and so far there have been no problems. LaslesVPN always the best”.",
-    name: "Davida Ayodele",
-    role: "CEO, BTH",
-    image: person,
+    text: "Bowen Tech Hub has helped me to improve on my design skills in just a few months learning and collaborating with new minds. I was able to learn different ways of achieving designs and the importance of team work. Networking was another thing that helped in improving my design journey.",
+    name: "Ayoola Ceilia",
+    role: "Graphics Designer",
+    image: ayoola,
   },
   {
-    text: "“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the bestto be more than my expectations and so far there have been no problems. LaslesVPN always the best  more than my expectations and so far there have been no problems. LaslesVPN always the best”.",
-    name: "Davida Ayodele",
-    role: "CEO, BTH",
-    image: person,
+    text: "Bowen Tech Hub helped me grow in tech. I learned frontend development and got hands-on experience working on real projects that boosted my portfolio and CV. Those projects opened doors I never thought possible. I also met amazing people who supported and inspired me throughout my journey.",
+    name: "Owoade habeeb",
+    role: "Solar Survey AI",
+    image: owoade,
   },
   {
-    text: "“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the bestto be more than my expectations and so far there have been no problems. LaslesVPN always the best  more than my expectations and so far there have been no problems. LaslesVPN always the best”.",
-    name: "Davida Ayodele",
-    role: "CEO, BTH",
-    image: person,
+    text: "Joining Bowen Tech Hub in 2022 launched my UI/UX journey, providing hands-on learning, mentorship, and collaboration. This foundation in Product Design led to my role as Product Design Lead for Google Developer Group, Bowen University.",
+    name: "Ohahuru Jason,",
+    role: "Product design lead, GDGC Bowen University",
+    image: jason,
   },
   {
-    text: "“Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the bestto be more than my expectations and so far there have been no problems. LaslesVPN always the best  more than my expectations and so far there have been no problems. LaslesVPN always the best”.",
-    name: "Davida Ayodele",
-    role: "CEO, BTH",
-    image: person,
+    text: "Joining Bowen Tech Hub as Head of Graphic Design and Lead Instructor was a pivotal moment in my career. Leading and mentoring a team sharpened my skills while teaching me leadership, communication, and teamwork.",
+    name: "Jesse Osifade",
+    role: "Head, graphic design team, Ha-shem Limited",
+    image: jesse,
   },
 ];
 
@@ -52,13 +55,13 @@ const Testimonials = () => {
               <div className="flex items-center gap-[18.5px]">
                 <img
                   src={item.image}
-                  className="size-[54px] rounded-full object-cover "
+                  className="size-[54px] min-w-[54px] min-h-[54px] rounded-full object-cover "
                 />
                 <div className="flex flex-col gap-[2px]">
-                  <p className="font-medium text-[14px] leading-[29px] lg:text-[17px]">
+                  <p className="font-medium text-[14px] leading-[29px] lg:text-[17px] capitalize">
                     {item.name}
                   </p>
-                  <p className="text-[#606060] text-[12px] leading-[29px] lg:text-[14px]">
+                  <p className="text-[#606060] text-[12px] leading-[29px] lg:text-[14px] capitalize">
                     {item.role}
                   </p>
                 </div>
