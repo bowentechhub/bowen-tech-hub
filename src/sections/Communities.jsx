@@ -16,51 +16,52 @@ const Communities = () => {
       image: fed,
       name: "Front-End Development",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Explore the world of user interfaces and interactive web experiences. Learn the latest technologies, frameworks, and best practices to build stunning, responsive, and high-performance websites and applications.",
     },
     {
       image: dataScience,
       name: "Data Science/AI",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Dive into the power of data and artificial intelligence. Learn how to analyze, visualize, and interpret data while leveraging AI and machine learning to solve real-world problems.",
     },
     {
       image: bed,
       name: "Back-End Development",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Master the backbone of web applications. Learn server-side programming, databases, and API development to build scalable and secure systems that power modern applications.",
     },
     {
       image: graphics,
       name: "Graphics Design",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Unleash your creativity through visual storytelling. Learn the principles of design, color theory, and digital tools to create stunning graphics, branding, and visual content.",
     },
     {
       image: software,
       name: "Software Engineering",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Gain in-depth knowledge of software development principles, system design, and best coding practices to build robust, scalable, and efficient applications.",
     },
     {
       image: cyb,
       name: "Cyber Security",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Protect digital assets and combat cyber threats. Learn about ethical hacking, network security, risk management, and how to defend systems from cyberattacks.",
     },
     {
       image: product,
       name: "Product Design",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Shape the future of digital products with user-centric design. Learn UI/UX principles, wireframing, prototyping, and how to create seamless user experiences.",
     },
     {
       image: productManagement,
       name: "Project Management",
       description:
-        "Drawing from their extensive industry experience, they will demystify complex concepts, provide insights, and offer guidance to nurture your skills. Get ready to unlock your full potential as you embark on this transformative learning experience.",
+        "Lead teams and drive projects to success. Learn agile methodologies, project planning, and effective team collaboration to deliver impactful solutions.",
     },
   ];
+
   const { openModal } = useModal();
   const { setSelectedCommunity } = useCommunity();
   const selectCommunity = (value) => {
