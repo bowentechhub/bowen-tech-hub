@@ -3,10 +3,11 @@ import { useModal } from "../hooks/useModal";
 import { useEffect, useState } from "react";
 import DownloadCurriculum from "./DownloadCurriculum";
 import JoinCommunityGroup from "./JoinCommunityGroup";
+import ApplicationClosed from "./ApplicationClosed";
 
 const Modal = () => {
   const { isOpen, closeModal } = useModal();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(4);
 
   useEffect(() => {
     if (isOpen) {
@@ -21,7 +22,7 @@ const Modal = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    setStep(1);
+    setStep(4);
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -41,6 +42,7 @@ const Modal = () => {
         {step === 1 && <JoinCommunity setStep={setStep} />}
         {step === 2 && <DownloadCurriculum setStep={setStep} />}
         {step === 3 && <JoinCommunityGroup setStep={setStep} />}
+        {step === 4 && <ApplicationClosed />}
       </div>
     </div>
   );
