@@ -1,4 +1,4 @@
-import event from "../assets/images/event.jpeg";
+import event from "../assets/images/event.jpg";
 import Button from "../components/Button";
 
 const SectionSeven = () => {
@@ -24,19 +24,27 @@ const SectionSeven = () => {
             <img
               src={event}
               className="lg:max-h-[525.97px] object-contain md:max-w-[50%]"
-              style={{ border: "8px solid #177751" }}
+              style={{ border: "8px solid #8800FF" }}
             />
             <div className="flex flex-col gap-4">
               <p className="font-semibold text-xl leading-[30px] lg:text-[28px] lg:leading-[60px]">
-                BTH X Innovfrica
+                BTH X Frame Africa
               </p>
               <p className="text-sm lg:text-[18px] lg:leading-[27px] text-[#8C8C8C]">
-                Drawing from their extensive industry experience, they will
-                demystify complex concepts, provide insights, and offer guidance
-                to nurture your skills. Get ready to unlock your full potential
-                as you embark on this transformative learning experience.
+                Frame Africa is a video production company dedicated to
+                providing top-quality video services, sharing industry
+                knowledge, and building a thriving filmmaking community. Founded
+                by passionate filmmakers, it aims to give aspiring creatives
+                real-world experience, mentorship, and access to global
+                opportunities. Starting at Bowen University, Frame Africa is on
+                a mission to empower filmmakers and expand its reach across
+                Africa and beyond.
               </p>
-              <Button text="Enrol today" className="max-w-fit" />
+              <Button
+                text="Enrol today"
+                link="https://forms.gle/dga4iaBFyWS6YLmg8"
+                className="max-w-fit"
+              />
             </div>
           </div>
         </div>
